@@ -2,43 +2,31 @@ import { Container } from "react-bootstrap";
 import Layout from "../Layout/Layout";
 import "./post.css";
 
-import Post1 from ".././assets/post1.jpg";
-import Profile from ".././assets/zafar.jpg";
+import { useEffect, useState } from "react";
+import { axiosInstance } from "../../config/axiosconfig";
+import UserPost from "./userPost";
 
 const Post = () => {
+  const [allPostsData, setAllPostsData] = useState([]);
+
+  const getAllPosts = async () => {
+    const response = await axiosInstance.get("/api/posts/allposts");
+    const { data: { code, posts } = {} } = response;
+    if (code === 200) {
+      setAllPostsData(posts || []);
+    }
+  };
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
   return (
     <div className="post-body">
+      {console.log("allPostsData", allPostsData)}
       <Layout>
         <Container>
-          <div className="post">
-            <div className="post-wrapper">
-              <div className="user-profile">
-                <div className="profile-pic">
-                  <img src={Profile} alt="" />
-                </div>
-                <div className="profile-username">
-                  <span>khanzafer448</span>
-                </div>
-              </div>
-              <div className="post-image">
-                <img src={Post1} alt="" />
-              </div>
-              <div className="like-bar">
-                <div className="like">
-                  <i className="lar la-thumbs-up"></i>
-                  <span>Like</span>
-                </div>
-                <div className="like">
-                  <i className="las la-comment-alt"></i>
-                  <span>Comment</span>
-                </div>
-                <div className="like">
-                  <i className="las la-share"></i>
-                  <span>Share</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <UserPost />0
         </Container>
       </Layout>
     </div>
