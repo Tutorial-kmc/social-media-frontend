@@ -26,7 +26,7 @@ const Post = () => {
       {console.log("allPostsData", allPostsData)}
       <Layout>
         <Container>
-          <UserPost />0
+          <UserPost />
         </Container>
       </Layout>
     </div>
