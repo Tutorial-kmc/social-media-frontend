@@ -20,15 +20,15 @@ const UserPost = () => {
         </div>
         <div className="like-bar">
           <div className="like">
-            <i className="lar la-thumbs-up"></i>
+            <i className="fa-solid fa-heart"></i>
             <span>Like</span>
           </div>
           <div className="like">
-            <i className="las la-comment-alt"></i>
+            <i className="fa-solid fa-comment"></i>
             <span>Comment</span>
           </div>
           <div className="like">
-            <i className="las la-share"></i>
+            <i className="fa-solid fa-share"></i>
             <span>Share</span>
           </div>
         </div>
