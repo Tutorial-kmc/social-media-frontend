@@ -4,6 +4,8 @@ import { useState } from "react";
 import "./header.css";
 import ImageUploader from "./ImageUploader";
 
+import Logo from "../assets/logo.svg";
+
 const Header = () => {
   const [show, setShow] = useState(false);
 
@@ -14,7 +16,12 @@ const Header = () => {
     <div className="header">
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Social Media</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <div className="logo">
+              <img src={Logo} alt="" />
+              <h5>TechMedia</h5>
+            </div>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
