@@ -1,3 +1,6 @@
+.header .bg-light{
+    padding: 0 24px;
+}
 .header a.nav-link {
     margin-right: 20px;
 }
@@ -8,4 +11,22 @@
 .logo h5{
     margin: 0;
     padding-left: 10px;
+    color: #223e62;
+
+}
+.btn-icon{
+    margin-right: 5px;
+}
+.header button.btn.btn-outline-success{
+    display: flex;
+}
+.header .profile-pic{
+    margin: 0;
+}
+.header .profile-pic img{
+    width: 38px;
+    margin-left: 10px;
+}
+body{
+    background: #f4f4f4;
 }
