@@ -2,34 +2,41 @@ import React from "react";
 import "./post.css";
 import Post1 from ".././assets/post1.jpg";
 import Profile from ".././assets/zafar.jpg";
+import dot from ".././assets/actionDot.svg";
 
 const UserPost = () => {
   return (
     <div className="post">
       <div className="post-wrapper">
         <div className="user-profile">
-          <div className="profile-pic">
-            <img src={Profile} alt="" />
+          <div className="user-section">
+            <div className="profile-pic">
+              <img src={Profile} alt="" />
+            </div>
+            <div className="profile-username">
+              <span>khanzafer448</span>
+              <p>13h. Lucknow, India</p>
+            </div>
           </div>
-          <div className="profile-username">
-            <span>khanzafer448</span>
+          <div className="post-action">
+            <img src={dot} alt="" />
           </div>
         </div>
         <div className="post-image">
           <img src={Post1} alt="" />
         </div>
         <div className="like-bar">
-          <div className="like">
-            <i className="fa-solid fa-heart"></i>
-            <span>Like</span>
+          <div className="like-action">
+            <div className="post-like-btn">
+              <LikeIcon />
+              <CommentIcon />
+              <ShareIcon />
+            </div>
+            <SaveIcon />
           </div>
-          <div className="like">
-            <i className="fa-solid fa-comment"></i>
-            <span>Comment</span>
-          </div>
-          <div className="like">
-            <i className="fa-solid fa-share"></i>
-            <span>Share</span>
+          <div className="post-like-stat">
+            <p>1,312 likes</p>
+            <span>View all 526 comments</span>
           </div>
         </div>
       </div>
@@ -38,3 +45,86 @@ const UserPost = () => {
 };
 
 export default UserPost;
+
+const LikeIcon = () => {
+  return (
+    <svg
+      width="20"
+      height="18"
+      viewBox="0 0 20 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 17.6667C10 17.6667 0.25 12.2364 0.25 5.72003C0.25 -0.796346 7.83333 -1.33937 10 3.75905C12.1667 -1.33937 19.75 -0.796346 19.75 5.72003C19.75 12.2364 10 17.6667 10 17.6667Z"
+        fill="url(#paint0_linear_103_270)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_103_270"
+          x1="10"
+          y1="0.333328"
+          x2="10"
+          y2="17.6667"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FF00C7" />
+          <stop offset="1" stop-color="#FF0000" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+const CommentIcon = () => {
+  return (
+    <svg
+      width="17"
+      height="16"
+      viewBox="0 0 17 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.6881 14.0206L4.95597 13.5984C4.82903 13.5179 4.6726 13.4988 4.52999 13.5463L4.6881 14.0206ZM1.375 15.125L0.900658 14.9669C0.840769 15.1466 0.88753 15.3446 1.02145 15.4786C1.15536 15.6125 1.35345 15.6592 1.53311 15.5993L1.375 15.125ZM2.47937 11.8119L2.95371 11.97C3.00125 11.8274 2.9821 11.671 2.90156 11.544L2.47937 11.8119ZM8.5 15.625C12.7112 15.625 16.125 12.2112 16.125 8H15.125C15.125 11.6589 12.1589 14.625 8.5 14.625V15.625ZM4.42023 14.4428C5.60027 15.1915 7.00028 15.625 8.5 15.625V14.625C7.19554 14.625 5.98055 14.2485 4.95597 13.5984L4.42023 14.4428ZM4.52999 13.5463L1.21689 14.6507L1.53311 15.5993L4.84621 14.495L4.52999 13.5463ZM1.84934 15.2831L2.95371 11.97L2.00502 11.6538L0.900658 14.9669L1.84934 15.2831ZM0.875 8C0.875 9.49972 1.30848 10.8997 2.05717 12.0798L2.90156 11.544C2.2515 10.5195 1.875 9.30446 1.875 8H0.875ZM8.5 0.375C4.28883 0.375 0.875 3.78883 0.875 8H1.875C1.875 4.34111 4.84111 1.375 8.5 1.375V0.375ZM16.125 8C16.125 3.78883 12.7112 0.375 8.5 0.375V1.375C12.1589 1.375 15.125 4.34111 15.125 8H16.125Z"
+        fill="black"
+      />
+    </svg>
+  );
+};
+
+const ShareIcon = () => {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.72552 13.2103L8.27831 13.4339L8.27831 13.4339L8.72552 13.2103ZM10.0361 13.1019L9.5582 12.9548L10.0361 13.1019ZM6.03575 8.14757L5.81214 8.59478L6.03575 8.14757ZM6.35253 8.46434L6.79974 8.24074L6.79974 8.24074L6.35253 8.46434ZM1.39822 4.46401L1.54526 4.9419L1.39822 4.46401ZM1.28975 5.77457L1.06615 6.22178L1.28975 5.77457ZM12.5963 1.01843L12.7434 1.49632L12.5963 1.01843ZM13.4817 1.90375L13.9596 2.05079L13.4817 1.90375ZM12.4493 0.540542L1.25117 3.98612L1.54526 4.9419L12.7434 1.49632L12.4493 0.540542ZM1.06615 6.22178L5.81214 8.59478L6.25936 7.70036L1.51336 5.32736L1.06615 6.22178ZM5.90531 8.68795L8.27831 13.4339L9.17274 12.9867L6.79974 8.24074L5.90531 8.68795ZM10.514 13.2489L13.9596 2.05079L13.0038 1.75671L9.5582 12.9548L10.514 13.2489ZM8.27831 13.4339C8.76582 14.409 10.1934 14.2908 10.514 13.2489L9.5582 12.9548C9.50292 13.1345 9.25679 13.1548 9.17274 12.9867L8.27831 13.4339ZM5.81214 8.59478C5.85246 8.61494 5.88515 8.64763 5.90531 8.68795L6.79974 8.24074C6.68282 8.00689 6.4932 7.81728 6.25936 7.70036L5.81214 8.59478ZM1.25117 3.98612C0.209269 4.3067 0.0911239 5.73427 1.06615 6.22178L1.51336 5.32736C1.34525 5.2433 1.36562 4.99717 1.54526 4.9419L1.25117 3.98612ZM12.7434 1.49632C12.9032 1.44714 13.053 1.59686 13.0038 1.75671L13.9596 2.05079C14.2448 1.12367 13.3764 0.255273 12.4493 0.540542L12.7434 1.49632Z"
+        fill="black"
+      />
+    </svg>
+  );
+};
+
+const SaveIcon = () => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.77971 9.5537L9.52495 3.80846C11.2335 2.09992 14.0036 2.09992 15.7121 3.80846C17.4207 5.51701 17.4207 8.2871 15.7121 9.99565L9.08301 16.6248C7.94398 17.7638 6.09725 17.7638 4.95822 16.6248C3.81919 15.4857 3.81919 13.639 4.95822 12.5L11.5873 5.87086C12.1569 5.30134 13.0802 5.30134 13.6497 5.87086C14.2193 6.44037 14.2193 7.36374 13.6497 7.93325L7.9045 13.6785"
+        stroke="black"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
