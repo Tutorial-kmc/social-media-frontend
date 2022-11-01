@@ -9,7 +9,7 @@ const Signup = () => {
         <h2>Signup</h2>
         <form>
           <div className="user-box">
-            <input type="text" name="" required="" />
+            <input type="text" name="" required=""  />
             <label>Name</label>
           </div>
           <div className="user-box">
